@@ -18,6 +18,7 @@ public class LambdaApp {
 			System.out.println(elemento);
 		}
 		
+		//imperativo
 		/** Collections.sort(lista, new Comparator<String>() {
 
 			@Override
@@ -27,7 +28,7 @@ public class LambdaApp {
 			
 		}); **/
 	
-		
+		//declarativo
 		Collections.sort(lista, (String p1, String p2) -> p1.compareTo(p2));
 		
 		System.out.println("************ Ordenado *************");
@@ -37,10 +38,35 @@ public class LambdaApp {
 		
 	}
 	
+	
+	public void calcular() {
+		
+		//imperativo
+		/**
+		Operacion operacion = new Operacion() {
+			@Override
+			public double promedio(double a, double b) {
+				return (a+b)/2;
+			}
+		};
+		
+		System.out.println("************ imperativo ****************");
+		System.out.println(operacion.promedio(2, 5));
+	    **/
+		
+		//Declarativo
+		Operacion operacion = (double x, double y) -> (x+y)/2;
+		System.out.println("************ Declarativo ****************");
+		System.out.println(operacion.promedio(6, 8));
+		
+	}
+	
 	public static void main(String[] args) {
 		
 		LambdaApp app = new LambdaApp();
-		app.ordenar();
+		//app.ordenar();
+		app.calcular();
+		
 	}
 	
 	
